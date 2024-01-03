@@ -75,7 +75,10 @@ const MovieList = ({ selectedFilterId, searchString }) => {
       );
       setFilteredMovieList(data);
       setTimeout(() => {
-        if (document.getElementById("movie-list-container")?.scrollHeight < window.innerHeight) {
+        if (
+          document.getElementById("movie-list-container")?.scrollHeight <
+          window.innerHeight
+        ) {
           if (searchString) searchStringApiCall(false);
           else {
             lastFrontVisitedYear++;
@@ -182,23 +185,28 @@ const MovieList = ({ selectedFilterId, searchString }) => {
 
   return (
     <div className="main-container">
-      {scrollY < lastScrollTop && isLoading && (
-        <LoadingSpinner />
-      )}
-      {(!isLoading && searchString && filteredMovieList[0]?.movies.length === 0) ?
+      {scrollY < lastScrollTop && isLoading && <LoadingSpinner />}
+      {!isLoading &&
+      searchString &&
+      filteredMovieList[0]?.movies?.length === 0 ? (
         <div className="search-string-error-container">
-          <p>{'Your search for "' + searchString + '" did not find any match'}</p>
+          <p>
+            {'Your search for "' + searchString + '" did not find any match'}
+          </p>
         </div>
-        :
+      ) : (
         <div id="movie-list-container">
           {searchString && (
             <MovieSuggetion filteredMovieList={filteredMovieList} />
           )}
           {filteredMovieList?.map((data, index) => {
-            if (data.movies.length === 0) return <></>;
+            if (data?.movies?.length === 0) return <></>;
             return (
               <div className="movie-list-subContainer" key={index}>
-                <div className="movie-released-year-text" id={data.year ?? `col-${index}`} >
+                <div
+                  className="movie-released-year-text"
+                  id={data.year ?? `col-${index}`}
+                >
                   {data.year}
                 </div>
                 <div className="movie-list-box-container">
@@ -210,13 +218,9 @@ const MovieList = ({ selectedFilterId, searchString }) => {
             );
           })}
         </div>
-      }
-      {scrollY > lastScrollTop && isLoading && (
-        <LoadingSpinner />
       )}
-      {filteredMovieList.length === 0 && (
-        <Shimmer />
-      )}
+      {scrollY > lastScrollTop && isLoading && <LoadingSpinner />}
+      {filteredMovieList.length === 0 && <Shimmer />}
     </div>
   );
 };
