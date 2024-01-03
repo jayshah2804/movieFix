@@ -1,5 +1,7 @@
 # MOVIEFIX
 
+### Please use node version 18 or above
+
 In the project directory, you can run:
 
 ### `npm install`
