@@ -13,7 +13,7 @@
 
 .shimmer-container .rectangle-box {
   width: 23%;
-  height: 180px;
+  height: 160px;
   background-color: rgb(148 163 184);
   border-radius: 6px;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;

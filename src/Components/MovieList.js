@@ -65,7 +65,7 @@ const MovieList = ({ selectedFilterId, searchString }) => {
 
   useEffect(() => {
     sendRequest(getMoviesByYearApiUrl(defaultYear), movieListResponse);
-  }, []);
+  }, [sendRequest]);
 
   useEffect(() => {
     if (selectedFilterId) {
@@ -91,7 +91,7 @@ const MovieList = ({ selectedFilterId, searchString }) => {
       });
     } else setFilteredMovieList(searchString ? searchedMovieList : movieList);
     if (searchString) window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [selectedFilterId]);
+  }, [selectedFilterId, sendRequest]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);

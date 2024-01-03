@@ -24,6 +24,7 @@ const Movie = ({ movie }) => {
           src={
             isImageLoadedError ? noImage : BASE_URL_IMAGE + movie.backdrop_path
           }
+          alt="poster_img"
           onLoad={() => setIsImageLoaded(true)}
           onError={() => setIsImageLoadedError(true)}
         />
@@ -35,7 +36,7 @@ const Movie = ({ movie }) => {
                   <svg
                     width="30"
                     height="25"
-                    viewBox="0 0 24 22"
+                    viewBox="0 0 23 22"
                     fill=""
                     xmlns="http://www.w3.org/2000/svg"
                     data-name="Play"

@@ -75,10 +75,15 @@
   opacity: 1;
   width: 240px;
   border-width: 1px;
+  border: 1px solid white;
 }
 
 .movie-search-inputBox::placeholder {
   color: rgb(156 163 175);
+}
+
+.movie-search-icon {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

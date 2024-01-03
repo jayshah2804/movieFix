@@ -1,4 +1,4 @@
-import React from "react";
+import { MOVIE_SUGGETION_TEXT_COUNT } from "../utils/constants";
 
 import "./MovieSuggetion.css";
 
@@ -8,7 +8,7 @@ const MovieSuggetion = ({ filteredMovieList }) => {
       <div className="more-to-explore-text">More to explore: </div>
       <div className="movie-suggetion-subContainer">
         {filteredMovieList[0]?.movies?.map((val, i, arr) => {
-          if (i <= 7)
+          if (i <= MOVIE_SUGGETION_TEXT_COUNT)
             return (
               <div className="movie-title-along-verticalBar" key={val.id}>
                 <span className="movie-title">&nbsp;{val.original_title}</span>

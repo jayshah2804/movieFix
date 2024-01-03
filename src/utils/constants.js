@@ -35,3 +35,5 @@ export function getMoviesByYearApiUrl(releaseYear) {
 export function getMoviesFromSearchStringApiUrl(searchString, pageNo) {
   return `${BASE_URL}search/movie?query=${searchString}&include_adult=false&language=en-US&page=${pageNo}`;
 }
+
+export const MOVIE_SUGGETION_TEXT_COUNT = 7;
