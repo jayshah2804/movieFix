@@ -1,0 +1,82 @@
+.header-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 128px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  padding: 0 40px;
+}
+
+.site-name {
+  color: rgb(185 28 28);
+  font-size: 24px;
+  line-height: 32px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.header-subContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.filter-button-container {
+  display: flex;
+  gap: 20px;
+}
+
+.filter-button {
+  color: white;
+  font-size: 16px;
+  padding: 8px;
+  border: rgb(243 244 246);
+  border-radius: 6px;
+  min-width: 48px;
+  cursor: pointer;
+}
+
+.bg-red {
+  background-color: rgb(185 28 28);
+}
+
+.bg-gray {
+  background-color: rgb(55 65 81);
+}
+
+.movie-search-container {
+  margin-right: 80px;
+  display: flex;
+}
+
+.movie-search-inputBox {
+  transition-property: opacity;
+  transition-timing-function: linear;
+  transition-duration: 150ms;
+  padding: 6px 8px;
+  border: white;
+  border-radius: 2px;
+  color: white;
+  background-color: black;
+  opacity: 0;
+  transition-duration: 500ms;
+  width: 0;
+  font-size: 16px;
+}
+
+.display-movie-search-inputBox {
+  opacity: 1;
+  width: 240px;
+  border-width: 1px;
+}
+
+.movie-search-inputBox::placeholder {
+  color: rgb(156 163 175);
+}

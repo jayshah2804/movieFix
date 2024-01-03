@@ -1,0 +1,162 @@
+.movie-details-main-container {
+  width: 22%;
+  margin-bottom: 8px;
+  height: 150px;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.movie-details-main-container:hover {
+  scale: 110% 130%;
+  z-index: 10;
+  transition-duration: 500ms;
+}
+
+.movie-details-sub-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.movie-image {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.movie-image-loading {
+  background-color: rgb(148 163 184);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+}
+
+.movie-info-container {
+  color: white;
+  width: 100%;
+  min-height: 80%;
+  height: auto;
+  font-weight: 700;
+  background-color: rgb(20 20 20);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 12px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  margin-top: -4px;
+}
+
+.movie-action-container {
+  display: flex;
+  align-items: center;
+}
+
+.movie-play-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  gap: 12px;
+}
+
+.movie-play-icon {
+  background-color: white;
+  border: white;
+  border-radius: 50%;
+  color: black;
+  padding: 4px;
+}
+
+.movie-play-icon:hover {
+  background-color: #f1f1f1;
+  opacity: 0.9;
+  scale: 105%;
+}
+
+.movie-more-actions-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+  gap: 12px;
+}
+
+.movie-watchlist-icon,
+.movie-more-icon {
+  position: relative;
+}
+
+.watchlist-svg,
+.more-svg {
+  background-color: rgb(51 51 51);
+  border-radius: 9999px;
+  padding: 4px;
+}
+
+.watchlist-svg:hover,
+.more-svg:hover {
+  color: black;
+  background-color: white;
+}
+
+.tooltip-watchlist,
+.tooltip-more {
+  font-size: 10px;
+  left: -60%;
+  top: 120%;
+  position: absolute;
+  opacity: 0;
+  color: black;
+  background-color: white;
+  border-radius: 6px;
+  padding: 1px;
+  font-size: 14px;
+  line-height: 20px;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.tooltip-more {
+  left: -20%;
+}
+
+.movie-details-main-container .movie-title {
+  font-size: 14px;
+}
+
+.movie-votes {
+  color: rgb(34 197 94);
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid rgb(34 197 94);
+  padding: 1px 4px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.movie-release-info {
+  color: rgb(170 170 170);
+  font-size: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.movie-type-info {
+  color: white;
+  background-color: rgb(51 51 51);
+  padding: 0 8px;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}
