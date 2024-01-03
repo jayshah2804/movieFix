@@ -14,14 +14,14 @@ const Header = ({ setSelectedFilterId, selectedFilterId, setSearchString }) => {
 
   return (
     <div className="header-container">
-      <span className="site-name">
-        moviefix
-      </span>
+      <span className="site-name">moviefix</span>
       <div className="header-subContainer">
         <div className="filter-button-container">
           {FILTERS.map((data) => (
             <button
-              className={`filter-button ${selectedFilterId === data.id ? "bg-red" : "bg-gray"}`}
+              className={`filter-button ${
+                selectedFilterId === data.id ? "bg-red" : "bg-gray"
+              }`}
               onClick={() => setSelectedFilterId(data.id)}
               key={data.id}
             >
@@ -36,7 +36,9 @@ const Header = ({ setSelectedFilterId, selectedFilterId, setSearchString }) => {
           <input
             type="text"
             placeholder="Search any movie"
-            className={`movie-search-inputBox ${isSearchIconClicked ? "display-movie-search-inputBox" : ""} `}
+            className={`movie-search-inputBox ${
+              isSearchIconClicked ? "display-movie-search-inputBox" : ""
+            } `}
             ref={searchInputRef}
             onChange={() => setSearchString(searchInputRef.current.value)}
             onBlur={() => {
@@ -44,7 +46,7 @@ const Header = ({ setSelectedFilterId, selectedFilterId, setSearchString }) => {
             }}
           />
           {!isSearchIconClicked && (
-            <div>
+            <div className="movie-search-icon">
               <svg
                 width="24"
                 height="24"
